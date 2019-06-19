@@ -1,0 +1,112 @@
+isim = input("isminizi giriniz")
+print("""
+      ¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥
+      ¥                                    ¥
+      ¥                                    ¥
+      ¥                                    ¥
+      ¥                                    ¥
+      ¥                                    ¥""")
+print(" \t\t ",isim,"\n"," \t\t ","_"*len(isim),sep="")
+print("""
+      ¥                                    ¥
+      ¥                                    ¥
+      ¥                                    ¥
+      ¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥
+      """)
+
+km = float(input("kac km gittiniz"))
+mil = km*(0.6214) 
+print(mil)
+
+ad = input("adiniz")
+soyad = input("soyadiniz")
+vize_puani = int(input("vize puaniniz"))
+final_puani = int(input("final puaniniz"))
+ders_takibi = int(input("ders takibiniz"))
+kacirilan_ders_sayisi = int(input("kacirilan ders sayisi"))
+yil_sonu_puani =(vize_puani*30/100) + (final_puani*50/100) +(100-(kacirilan_ders_sayisi*5))*20/100)
+print(yil_sonu_puani)
+f = open(“ogrenciNotHesaplama.txt”, "w")
+print(yil_sonu_puani,file=f)
+f.close()
+
+a = float(input("ana paraniz"))
+t = int(input("faiz sureniz"))
+n = int(input("faiz oraniniz"))
+yillik_faiz_tutari = (a*t*n)/100
+print(yillik_faiz_tutari)
+f = open("faizHesaplama.txt", "w")
+print(yillik_faiz_tutari,file=f)
+f.close()
+
+toplam_para = faiz + ana para
+print(toplam_para)
+f = open("faizHesaplama.txt", "w")
+print(toplam_para,file=f)
+f.close()
+
+
+a = float(input("ana paraniz"))
+t = int(input("faiz sureniz"))
+n = int(input("faiz oraniniz"))
+aylik_faiz_tutari = (a*t*n)/(12*100)
+print(aylik_faiz_tutari)
+f = open("faizHesaplama.txt", "w")
+print(aylik_faiz_tutari,file=f)
+f.close()
+
+toplam_para = faiz + ana para
+print(toplam_para)
+f = open("faizHesaplama.txt", "w")
+print(toplam_para,file=f)
+f.close()
+
+a = float(input("ana paraniz"))
+t = int(input("faiz sureniz"))
+n = int(input("faiz oraniniz"))
+gunluk_faiz_tutari = (a*t*n)/(365*100)
+print(gunluk_faiz_tutari)
+f = open("faizHesaplama.txt", "w")
+print(gunluk_faiz_tutari,file=f)
+f.close()
+
+toplam_para = faiz + ana para
+print(toplam_para)
+f = open("faizHesaplama.txt", "w")
+print(toplam_para,file=f)
+f.close()
+
+yil = yillik_faiz_tutari
+ay = aylik_faiz_tutari
+gun = gunluk_faiz_tutari
+toplam_faiz_tutari =yil + ay + gun
+print(toplam_faiz_tutari)
+f = open("faizHesaplama.txt", "w")
+print(toplam_faiz_tutari,file=f)
+f.close()
+
+m = int(input("mutfak harcama"))
+e = int(input("egitim harcama"))
+g = int(input("giyim harcama"))
+u = int(input("ulasim harcama"))
+aylik_masraf = m + e + g + u
+print(aylik_masraf)
+f = open("aylikmasraf.txt", "w")
+print(aylik_masraf,file=f)
+f.close()
+
+b = int(input("aylik gelir"))
+oran = aylik_masraf / aylik_gelir
+print(oran)
+f = open("aylikmasraf.txt", "w")
+print(oran,file=f)
+f.close()
+
+
+print("""Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.""")
+
+print("Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  \"Universiteit Van Amsterdam\" okulundan  1982’de mezun olmuştur.")
+
+print('Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  "Universiteit Van Amsterdam" okulundan  1982\'de mezun olmuştur.')
+
