@@ -1,0 +1,103 @@
+tarih = input("dogum gununuzu ay ve gun olarak girin: ")
+if 121 <= int(tarih) <=218:
+    print("kova burcu")
+elif 219 <= int(tarih) <=320:
+    print("balik burcu")
+elif 321 <= int(tarih) <=420:
+    print("koc burcu")
+elif 421 <= int(tarih) <=520:
+    print("boga burcu")
+elif 521 <= int(tarih) <= 620:
+    print("ikizler burcu")
+elif 621 <= int(tarih) <= 722:
+    print("yengec burcu")
+elif 723 <= int(tarih) <=821:
+    print("aslan burcu")
+elif 822 <= int(tarih) <= 923:
+    print("basak burcu")
+elif 924 <= int(tarih) <= 1023:
+    print("terazi burcu")
+elif 1024 <= int(tarih) <= 1122:
+    print("akrep burcu")
+elif 1123 <= int(tarih) <= 1221:
+    print("yay burcu")
+else:
+    print("kova burcu")
+
+************************************************
+km = float(input("kac km gittiniz"))
+mil = float(input("kac mil gittiniz"))
+giris = """
+(1)km = mil /(0.6214)#parantez icindeki rakam islem numarasini gosterir
+(2)mil = km *(0.6214)#parantez icindeki rakam islem numarasini gosterir
+islem = 1
+"""
+print(giris)
+islem = 1
+while islem == 1 :
+    istek = input("yapmak istediginiz islem numarasini girin (Çıkmak için q): ")
+    if istek == "1":
+        print("donusturmek istenilen uzunlik",mil /(0.6214),"mil")
+    elif istek == "2":
+        print("donusturmek istenilen uzunlik",km *(0.6214),"km")
+    elif istek == "q":
+        print("programdan cikiliyor")
+        islem = 0
+    else:
+        print("yanlis giris",giris)
+*******************************************************
+soyadi = input("soyadinizi girin: ")
+rakam =['0','1','2','3','4','5','6','7','8','9']
+
+if len(soyadi)<18 and len(soyadi)>3:
+   for i in soyadi:
+       if i in rakam:
+           print("soyadinda rakam olmaz!")
+           soyadi = input("soyadinizi girin: ")
+
+
+   print(soyadi)
+
+
+   parola = input("parolanizi girin: ")
+
+
+
+   if len(parola)<6 and len(parola)>12:
+             print("yanlis parola!")
+             parola = input("parolanizi girin: ")
+   elif len(parola)>6 and len(parola)<12:
+       print(parola)
+       f=open("kayit.txt","w")
+       print(soyadi,parola,file=f)
+       f.close()
+   else:
+       print("parola karakter sayisi 6 ile 12 arasinda olmali")
+       parola = input("parolanizi girin: ")
+
+
+else:
+   soyadi = input("soyadinizi girin: ")
+   print("soyadi karakter sayisi 3 ile 18 arasinda olmasi gerekiyor")
+************************************
+hesap = """
+Kullanicinin hesabinda 1000 € var.Yapilacak islemler:
+ 1-bakiye kontrolu
+ 2-para yatirma
+ 3-para cekme
+ """
+print(hesap)
+bakiye = 1000
+islem = input("yapmak istediginiz islemin numarasini girin: ")
+if islem == "1":
+    print("bakiye kontrolu")
+    bakiye = int(input("cekilecek tutar"))
+    if bakiye>100:
+        print("yetersiz bakiye!Bu islemi gerceklestiremezsiniz")
+elif islem == "2":
+    print("Para yatirma","bakiyeniz",bakiye)
+elif islem == "3":
+    print("Para cekem","bakiyeniz",bakiye)
+else:
+    print("yanlis giris")
+    print("baska bir islem yapmak ister misiniz?")
