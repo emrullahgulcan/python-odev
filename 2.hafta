@@ -80,6 +80,25 @@ else:
    soyadi = input("soyadinizi girin: ")
    print("soyadi karakter sayisi 3 ile 18 arasinda olmasi gerekiyor")
 ************************************
+sayi = 8
+deneme = 5
+tahmin = 0
+while tahmin != sayi:
+    deneme+=1
+    tahmin = int(input("tahmini sayinizi girin: "))
+    if tahmin == 4 or tahmin == 5:
+       print("1 yildiz kazandiniz")
+    elif tahmin == 3 or tahmin == 4:
+        print("2 yildiz kazandiniz")
+    elif tahmin == 1:
+        print("tebrikler 1 yildiz kazandiniz".format(deneme + 1))
+        break
+    else:
+        print("uzgunum bilemediniz.")
+        tahmin = int(input("tahmini sayinizi girin: "))
+       
+
+************************************
 hesap = """
 Kullanicinin hesabinda 1000 € var.Yapilacak islemler:
  1-bakiye kontrolu
