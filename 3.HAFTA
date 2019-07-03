@@ -1,0 +1,153 @@
+HESAP OLUSTURMA
+
+kullanici_adi = input("kullanici adinizi giriniz: ")
+parola = input("parolanizi giriniz: ")
+dosya = open("giris bilgileri.txt","w")
+dosya.write(kullanici_adi)
+dosya.write(parola)
+dosya.close()
+
+girisadim = "emrullah"
+
+while True:
+    kullanici_adi = input("kullanici adinizi giriniz: ")
+    if kullanici_adi == girisadim:
+        print("bu kullanici adiyla daha once giris yapildi,lutfen baska bir kullanici adi giriniz")
+        
+    else:
+        print("kullanici ve parolaniz basarili bir sekilde olusturulmustur")
+        break
+with open("giris bilgileri.txt","r+") as dosya:
+    veri = dosya.read()
+    dosya.seek(0)
+    dosya.write(kullanici_adi  + parola + veri)
+    
+    *******************************************************************
+    SAYI TAHMIN
+ 
+ sayi = 75
+deneme = 0
+while True:
+    deneme+=1
+    if tahmin == 15:
+        print("cok dusuk bir tahminde bulundunuz,daha yuksek bir tahminde bulunun")
+    elif tahmin == 46:
+        print("yine uzak bir tahminde bulundun,biraz daha yuksek bir tahmin soyle")
+    elif tahmin == 93:
+        print("bu seferde tahminin sayiyi gecti,daha kucuk bir tahminde bulun")
+    elif tahmin == 70:
+        print("cok yaklastin bir tahminde daha bulun")
+    elif tahmin == 75:
+        print("tebrikler sayiyi {}.denemende buldun".format(deneme)
+        break       
+        
+        ******************************************************************
+     LISTE AYIKLAMA 
+      
+  futbolcular = open(r"C:\Users\Sylvan Steenhuis\Downloads\futbolcular.txt","r")
+satirsayisi = 0
+with futbolcular as f:
+    for line in f:
+        satirsayisi+=1
+
+
+
+futbolcular = open(r"C:\Users\Sylvan Steenhuis\Downloads\futbolcular.txt","r")
+f = open(r"C:\Users\Sylvan Steenhuis\Desktop\fenerbahce.txt","w")
+b = open(r"C:\Users\Sylvan Steenhuis\Desktop\besiktas.txt","w")
+g = open(r"C:\Users\Sylvan Steenhuis\Desktop\galatasaray.txt","w")
+a =1
+while a < satirsayisi:
+
+    satir = futbolcular.readline()
+    if "Galatasaray" in satir  :
+        g.write(satir)
+    elif "Fenerbahçe" in satir:
+        f.write(satir)
+    elif "Beþiktaþ" in satir:
+        b.write(satir)
+
+    a+=1
+
+f.close()
+g.close()
+b.close()
+****************************************************************************
+HACIM-ALAN HESAPLAMA
+
+hesaplama = """
+(1)karenin alani
+(2)ucgenin alani
+(3)diktorgenin alani
+(4)kupun hacmi
+(5)karenin hacmi
+(6)koninin hacmini hesaplayacaz
+"""
+print(hesaplama)
+while True:
+    islem = input("yapmak istediginiz islemin numaraini girin: ")
+    if islem == "1":
+        karenin_kenari = int(input("karenin kenarini giriniz: "))
+        try:
+            print("karenin alani","=",karenin_kenari ** 4)
+        except ValueError:
+            print("lutfen sadece sayi girin")
+    elif islem == "2":
+        ucgenin_kisakenari = int(input("uckenin kisa kenarini girin: "))
+        ucgenin_ortakenari = int(input("uckenin orta kenarini girin: "))
+        ucgenin_uzunkenari = int(input("uckenin uzun kenarini girin: "))
+        try:
+            print("ucgenin alani","=",ucgenin_kisakenari * ucgenin_ortakenari * ucgenin_uzunkenari )
+        except ValueError:
+            print("lutfen sadece sayi girin")
+    elif islem =="3":
+        dikdortgenin_uzunkenari = int(input("dikdortgenin uzun kenarini giriniz"))
+        dikdortgenin_kisakenari = int(input("dikdortgenin kisa kenarini giriniz"))
+        try:
+            print("dikdortgenin alani","=",dikdortgenin_uzunkenari * dikdortgenin_kisakenari )
+        except ValueError:
+            print("lutfen sadece sayi girin")                          
+    elif  islem == "4":
+        kupun_kenari = int(input("kupun kenarini giriniz: "))                  
+        try:
+            print("kupun hacmi","=",kupun_kenari**3)                          
+        except ValueError:
+            print("lutfen sadece sayi girin")                         
+    elif islem == "5":
+        karenin_kenari = int(input("karenin kenarini giriniz: "))
+        try:                             
+            print("karenin hacmi","=",karenin_kenari*4)
+        except ValueError:
+            print("lutfen sadece sayi girin")
+    elif islem == "6":
+            koninin_yuksekligi = float(input("konin yuksekligini giriniz: ")) 
+            koni_yaricapi = float(input("koninin yaricapini giriniz"))
+            pi = 3.14
+        try:   
+            print("koninin hacmi","=",(1/3)koninin_yuksekligi * koni_yaricapi *  pi)
+        except ValueError:
+            print("lutfen sadece sayi girin")
+    else:
+            print("islem icin lutfen gecerli bir giris yapin")                           
+****************************************************************************
+FIZZBUZZ
+
+for i in range(1,100):
+    if i%3 == 0:
+        print("FIZZ")
+    if i%5 == 0:
+        print("BUZZ")
+    if i%15 == 0:
+        print("FIZZBUZZ")
+        
+****************************************************************************
+ASAL SAYI
+
+sayi = int(input("sayinizi giriniz: "))
+for aralik in range(2,sayi):
+    if sayi % aralik == 0:
+        print(sayi,"asal sayi degildir")
+        break
+    elif sayi % aralik != 0 and sayi % (aralik - 1) != 0:
+        print(sayi,"asal sayidir")
+    
