@@ -44,7 +44,7 @@ while True:
         ******************************************************************
      LISTE AYIKLAMA 
       
-  futbolcular = open(r"C:\Users\Sylvan Steenhuis\Downloads\futbolcular.txt","r")
+futbolcular = open(r"C:\Users\Sylvan Steenhuis\Downloads\futbolcular.txt","r")
 satirsayisi = 0
 with futbolcular as f:
     for line in f:
