@@ -24,11 +24,11 @@ with open("giris bilgileri.txt","r+") as dosya:
     
     *******************************************************************
     SAYI TAHMIN
- 
- sayi = 75
+sayi = 75
 deneme = 0
 while True:
     deneme+=1
+    tahmin = int(input("tahmin ettiginiz sayiyi giriniz: "))
     if tahmin == 15:
         print("cok dusuk bir tahminde bulundunuz,daha yuksek bir tahminde bulunun")
     elif tahmin == 46:
@@ -38,8 +38,8 @@ while True:
     elif tahmin == 70:
         print("cok yaklastin bir tahminde daha bulun")
     elif tahmin == 75:
-        print("tebrikler sayiyi {}.denemende buldun".format(deneme)
-        break       
+        print("tebrikler sayiyi {}.denemende buldun".format(deneme))
+        break      
         
         ******************************************************************
      LISTE AYIKLAMA 
@@ -89,7 +89,7 @@ while True:
     if islem == "1":
         karenin_kenari = int(input("karenin kenarini giriniz: "))
         try:
-            print("karenin alani","=",karenin_kenari ** 4)
+            print("karenin alani","=",karenin_kenari ** 2)
         except ValueError:
             print("lutfen sadece sayi girin")
     elif islem == "2":
