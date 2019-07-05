@@ -147,11 +147,15 @@ for i in range(1,100):
 ****************************************************************************
 ASAL SAYI
 
-sayi = int(input("sayinizi giriniz: "))
-for aralik in range(2,sayi):
-    if sayi % aralik == 0:
-        print(sayi,"asal sayi degildir")
-        break
-    elif sayi % aralik != 0 and sayi % (aralik - 1) != 0:
-        print(sayi,"asal sayidir")
+while True:
+    sayi = int(input("sayinizi giriniz: "))
+    for aralik in range(2,sayi):
+        if sayi % aralik == 0:
+            print(sayi,"asal sayi degildir")
+            break
+        elif sayi % aralik != 0 and (aralik == sayi-1):
+            print(sayi,"asal sayidir")
+        
+        else:
+            print("lutfen pozitif degerli bir sayi girin")
     
