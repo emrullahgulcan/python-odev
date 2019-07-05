@@ -28,15 +28,15 @@ sayi = 75
 deneme = 0
 while True:
     deneme+=1
-    tahmin = int(input("tahmin ettiginiz sayiyi girin: "))
-    if tahmin in range(0,55):
+    tahmin = int(input("tahmin ettiginiz sayiyi(1-100 arasinda) girin: "))
+    if tahmin in range(0,40):
         print("cok dusuk bir tahminde bulundunuz,daha yuksek bir tahminde bulun")
-    elif tahmin  in range(56,75):
-        print("cok yaklastin bir tahminde daha bulun")
+    elif tahmin  in range(40,65):
+        print("yine dusuk bir tahminnde bulundun,daha yuksek bir tahminde bulun")
     elif tahmin  in range(76,100):
         print("bu seferde tahminin sayiyi gecti,daha dusuk bir tahminde bulun")
-    elif tahmin >100:
-        print("tahminin sayidan cok buyuk,baska bir tahminde daha bulun")
+    elif tahmin in range(65,75):
+        print("cok yaklastin, bir tahminde daha bulun")
     elif tahmin == 75:
         print("tebrikler sayiyi {}.denemende buldun".format(deneme))
         break                          
