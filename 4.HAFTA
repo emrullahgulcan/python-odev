@@ -1,0 +1,85 @@
+*********************************1.SORU******************************************
+
+#input yardimiyla kullanicidan bilgi alarak takimlarin basari sirasi ile ilgili bir program yazdik.
+while True:
+    takim =input("bir takim adini giriniz: ")
+    if takim == "besiktas":
+        print(takim.upper(), "Turkiyenin en iyi takimidir")#upper() metodunu kullandik
+    elif takim == "fenerbahce":
+        print(takim.upper(), "Turkiyenin en iyi 2. takimidir")#upper() metodunu kullandik
+    elif takim == "galatasaray":
+        print(takim.upper(), "Turkiyenin en iyi 3.takimidir")#upper() metodunu kullandik
+
+    else:
+        print(takim.upper(), "en iyi ilk ucun icinde degil")#upper() metodunu kullandik
+
+
+*******************************************************************************************
+                    2.SORU
+#input yardimiyla kullanicidan bilgi alarak parola ile ilgili bir program yazdik.
+parola = input("lutfen parolanizi giriniz: ")
+kucuk_harfler = "abcçdefgğhıijklmnoöprsştuüvyz"#kucuk harfleri degiskene atadik
+buyuk_harfler = "ABCÇDEFGĞIİJKLMNOÖPRSŞTUÜVYZ"#buyuk harfleri degiskene atadik
+rakamlar = "0123456789"#rakamlari degiskene atadik
+kucukharfadedi = 0#bizden istenen kucuk harf adedine sayac yerlestirdik
+buyukharfadedi = 0#bizden istenen buyuk harf adedine sayac yerlestirdik
+rakam = 0#bizden istenen harf adedine sayac yerlestirdik
+ozelkarakter = 0#bizden istenen ozel karakter adedine sayac yerlestirdik
+#for dongusunu kullanarak degiskenleri her dongude bir ekleyerek donguyu tamamladik
+#if,elif ve else kosullarini kullandik
+for i in parola:
+   if i in kucuk_harfler:
+       kucukharfadedi+=1
+   elif i in buyuk_harfler:
+       buyukharfadedi+=1
+   elif i in rakamlar:
+       rakam+=1
+   else:
+       ozelkarakter+=1
+print("Kucuk harfler: {} \nBuyuk harfler: {} \nRakamlar : {} \nOzel karakterler: {}".format(kucukharfadedi,buyukharfadedi,rakam,ozelkarakter))
+#format metodunu kullandik
+************************************************************************************************
+                3.SORU
+#input yardimiyla kullanicidan cadde ismini sorduk
+#caddede gecen rakamlarin toplamini hesaplayan bir program yazdik
+cadde = input("cadde adinizi giriniz: ")
+rakam = "0123456789"#rakamlara degisken atadik
+toplam = 0#rakamlarin toplamini hesaplayabilmek icin toplam adinda sayac yerlestirdik
+for i in cadde:#for dongusu ile ceddde isminin icinden gecen rakamlara tek tek baktik
+    if i in rakam:
+        toplam+=int(i)#toplam sayacina her seferine caddede gecen rakami ekleyerek topladik
+print(toplam)
+*****************************************************************************
+                 4.SORU
+ try:
+    futbolcular = open("C:/Users/Sylvan Steenhuis/Desktop/futbolcular.txt","r")#varolan dosyamizi r kipinde actik
+    liste = futbolcular.readlines()#fotbolcular dosyamizi readlines() metodu ile okuyarak liste degiskenine atadik
+    yenidosya = open("yenidosya.txt","w")#yenidosya adiyle W kipinde bir dosya actik
+    sesli_harfler  = "AEIİOÖUÜ"#sesli harfleri degiskene atadik
+
+    for i in liste:
+        if i[0] in sesli_harfler:#for dongusunu kurarak eger liste icindeki futbolculardan isminin ilk indeksi
+            yenidosya.write(i)#sesli harf ile baslamissa yenidosyamizi Write() metodu ile yazdirdik
+except IOError:
+    print("bir hata oluştu!")
+finally:#dosyamizi olustururken bir hata gerceklesmissede finally blogu ile dosyamizi guvenli bir sekilde kapattik
+    yenidosya.close()
+    futbolcular.close()
+*********************************************************************************************************
+                           5.SORU
+try:
+    futbolcular = open("C:/Users/Sylvan Steenhuis/Desktop/futbolcular.txt","r")
+    takim = futbolcular.read()
+    newteam = open("newteam.txt","w")
+    kaynak = "şçöğüıŞÇÖĞÜİ"#turkce karakterleri bir degiskene atadik
+    hedef = "scoguiSCOGUI"#turkce karakterleri benzeri ile degistircegimiz hedef adli bir degisken olusturduk
+    çeviri_tablosu = str.maketrans(kaynak, hedef)#turkce karaklerini benzeri ile degistimek icin str.maketrans() metodunu kullanip degisekene atadik
+    print(takim.translate(çeviri_tablosu))#translate() metodu ile degistirme islemimizi tamamladik
+    newteam.write(takim.translate(çeviri_tablosu))#yeni olusturdugumuz dosyamiza yazdirdik
+except IOError:
+    print("bir hata oluştu!")
+finally:#dosyamizi olustururken bir hata gerceklesmissede finally blogu ile  dosyamizi guvenli bir sekilde kapattik
+    newteam.close()
+    futbolcular.close()
+
+
