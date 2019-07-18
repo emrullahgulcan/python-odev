@@ -1,0 +1,104 @@
+ADAM ASMACA
+
+hak = 6
+while hak != 0:
+
+    girilenharf = input("kelime tahmin icin bir harf girin :")
+    print("Kalan hak:{} bos kelime {}".format(hak, dogrutahmin))
+    if type(int(girilenharf)) != type("gfdg"):
+        print("sadece harf")
+        continue
+    if girilenharf not in kelime:
+        hak+=-1
+        print("harf kelime icinde bulunmuyor.hakkin azaldi.Kalan hak:{}".format(hak))
+
+        if(hak == 5):
+            print(metin1)
+        elif(hak == 4):
+            print(metin2)
+        elif (hak == 3):
+            print(metin3)
+        elif (hak == 2):
+            print(metin4)
+        elif (hak == 1):
+            print(metin5)
+        elif (hak == 0):
+            print(metin6)
+            print("Game over")
+
+        continue
+
+    sayac = 0
+    for harf in kelime:
+        if (harf == girilenharf):
+            dogrutahmin[sayac] = girilenharf
+            print("Son durum  {}".format(dogrutahmin))
+
+        sayac += 1
+
+    if ("".join(dogrutahmin) == kelime):
+        print("kelimeyi bildiniz basardiniz")
+        break
+
+***********************************************************************************************************************************
+SAYI TAHMIN
+
+arti_sayi = 0
+eksi_sayi = 0
+sayi = "2345"
+while True:
+    tahmin = input("bir tahminde bulunun")
+    if tahmin == sayi:
+        print("sayiyi dogru girdiniz")
+        break
+
+    if "0" in tahmin:
+        print("sayi 0 iceremez")
+        continue
+
+    if len(tahmin) != 4:
+        print("dort haneli bir sayi degil")
+        continue
+
+    for i in range(len(tahmin)):
+        if tahmin[i] in tahmin[0:i]:
+            print("sayinin  rakamlari farkli olmali")
+            continue
+
+    for i in sayi:
+        for j in tahmin:
+            # print(i+str(sayi.index(i)))
+            # print(j+str(tahmin.index(j)))
+
+            if i == j and sayi.index(i) == tahmin.index(j):
+                arti_sayi += 1
+            elif i == j and sayi.index(i) != tahmin.index(j):
+                eksi_sayi += -1
+
+    print("yapilan tahmin: {}  \noutput :{} + {}".format(tahmin, arti_sayi, eksi_sayi))
+    arti_sayi = 0
+    eksi_sayi = 0
+    
+    ******************************************************************************************************************************
+    BONUS-SORU
+    
+ # İki liste tanımlayın.
+ # İlk liste 1'den 10'a kadar sayılardan oluşturun.
+ # İkinci listeyi sırasıyla a'dan başlayarak 10 harf ile oluşturun.
+ # İki liste için de döngü kurup, iki listenin elemanlarının bütün kombinasyonlarından oluşan iki yeni liste oluşturun.
+
+ # 3'er elemanli versiyonunda cıktı olarak bu şekilde bir çıktı beklenmektedir:
+
+ # 1. [1a, 1b, 1c, 2a, 2b, 2c, 3a, 3b, 3c]
+ # 2. [a1, a2, a3, b1, b2, b3, c1, c2, c3]
+
+liste1 = [1,2,3,4,5,6,7,8,9,10]
+liste2 = ["a","b","c","d","e","f","g","h","i","j"]
+liste3 = []
+liste4 = []
+for i in liste1:
+    for j in liste2:
+       liste3+=[str(i)+j]
+       liste4+=[j+str(i)]
+print(liste3)
+print(liste4)
